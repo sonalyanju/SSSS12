@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Online Election</title>
+	<link href="1.css" rel="stylesheet" type="text/css">
+	<style>
+		table{
+				margin:100%,100%,100%,100%;
+				border-spacing:20;
+				table-layout:inherit;
+			 }
+	</style>
+	<script type="text/javascript">
+		function loginuser()
+		{
+			var user=document.f1.usrnme.value;
+			var pss=document.f1.pswrd.value;
+			if((user=="")||(pss==""))
+			{
+				alert("Kindly enter your login credentials");
+				var temp=-1;
+			}
+			var roles=parseInt(document.f1.role.value);
+			if(roles==-1)
+			alert("Please choose your role");
+			if((roles==3)&&(temp!=-1))
+			window.open("new_reg.html");
+			if((roles==1)&&(temp!=-1))
+			window.open("admin_page.html");
+		}
+	</script>
+</head>
+<body>
+<center>
+<form name="f1">
+    
+	<table>
+	<caption><h1>LOGIN</h1></caption>
+	<tr>
+		<td>Enter your user-name</td>
+		<td><input type="textbox" name="usrnme"></td>
+	</tr>
+	<tr>
+		<td>Enter password</td>
+		<td><input type="password" name="pswrd"></td>
+	</tr>
+	<tr>
+		<td>Enter role</td>
+		<td><select name="role">
+				<option value="-1" selected>Choose your role</option>
+				<option value="1">Admin</option>
+				<option value="2">Candidate</option>
+				<option value="3">Voter</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td colspan=2 align="center"><input type="button" name="login" value="login" onclick="loginuser()">
+	</tr>
+	<tr>
+		<td>New User?&nbsp&nbsp<a href="new_reg.html" target="_blank">Click Here</a></td>
+		<td><a href="forgot_password.html" target="_blank">Forgot Password</a></td><br>
+		<td><a href="homepage.html" target="_parent">home</a></td>
+	</tr>
+	</table>
+</form>
+</center>
+</body>
+</html>
